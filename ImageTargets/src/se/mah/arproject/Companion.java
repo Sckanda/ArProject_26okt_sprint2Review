@@ -58,7 +58,6 @@ public class Companion extends Activity implements OnClickListener {
                                 SensorManager.SENSOR_DELAY_NORMAL);
         //
 
-		// Image Gallery
 		gallery = (Gallery) findViewById(R.id.gallery1);
 		ARbtn = (Button) findViewById(R.id.btnARMode_guide);
 		ARbtn.setOnClickListener(this);
