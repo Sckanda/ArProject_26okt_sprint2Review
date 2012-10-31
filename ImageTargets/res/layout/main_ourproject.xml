@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <AbsoluteLayout
+        android:id="@+id/menubuttonGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true" >
+
+        <ImageView
+            android:id="@+id/imgView4"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_x="817dp"
+            android:layout_y="106dp"
+            android:src="@drawable/m_ar" />
+
+        <ImageView
+            android:id="@+id/imgView3"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_x="558dp"
+            android:layout_y="106dp"
+            android:src="@drawable/m_webb" />
+
+        <ImageView
+            android:id="@+id/imgView2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_x="302dp"
+            android:layout_y="106dp"
+            android:src="@drawable/m_anim" />
+
+        <ImageView
+            android:id="@+id/imgView1"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="60dp"
+            android:layout_x="54dp"
+            android:layout_y="104dp"
+            android:src="@drawable/menu_guide" />
+
+    </AbsoluteLayout>
+
+</RelativeLayout>

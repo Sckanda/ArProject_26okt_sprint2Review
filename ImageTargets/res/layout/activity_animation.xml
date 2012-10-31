@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center" >
+
+    <Button
+        android:id="@+id/Btn_1"
+        android:layout_width="236dp"
+        android:layout_height="236dp"
+        android:layout_alignBottom="@+id/Btn_2"
+        android:layout_margin="10dp"
+        android:background="@drawable/pic1" />
+
+    <TextView
+        android:id="@+id/DescText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@+id/Btn_1"
+        android:text="@string/hello_world"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/Btn_2"
+        android:layout_width="236dp"
+        android:layout_height="236dp"
+        android:layout_margin="16dp"
+        android:layout_toRightOf="@+id/DescText"
+        android:background="@drawable/pic2" />
+
+    <TextView
+        android:id="@+id/DescText1"
+        android:scaleType="fitXY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_toRightOf="@+id/Btn_2"
+        android:text="@string/info1"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/Btn_3"
+        android:layout_width="236dp"
+        android:layout_height="236dp"
+        android:layout_margin="16dp"
+        android:layout_toRightOf="@+id/DescText1"
+        android:background="@drawable/pic3" />
+
+    <Button
+        android:id="@+id/Btn_4"
+        android:layout_width="236dp"
+        android:layout_height="236dp"
+        android:layout_margin="16dp"
+        android:layout_toRightOf="@+id/Btn_3"
+        android:background="@drawable/pic4" />
+
+    <Button
+        android:id="@+id/Btn_5"
+        android:layout_width="236dp"
+        android:layout_height="236dp"
+        android:layout_margin="16dp"
+        android:layout_toRightOf="@+id/Btn_4"
+        android:background="@drawable/pic5" />
+
+    
+
+</RelativeLayout>
