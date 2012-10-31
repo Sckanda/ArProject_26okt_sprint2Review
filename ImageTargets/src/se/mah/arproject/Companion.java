@@ -4,6 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,6 +33,9 @@ public class Companion extends Activity implements OnClickListener {
 	public Boolean isOpen_pic5 = true;
 	public Boolean isOpen_pic0 = true;
 	
+	 private SensorManager mSm;
+	 private Sensor startAR;
+	
 	private Integer[] imageIDs = { 
 			R.drawable.pic1, 
 			R.drawable.textbox_1,
@@ -43,6 +50,13 @@ public class Companion extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.guide);
+		
+		//Sensor
+        mSm = (SensorManager) getSystemService(SENSOR_SERVICE);
+        startAR = mSm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mSm.registerListener(listener, startAR,
+                                SensorManager.SENSOR_DELAY_NORMAL);
+        //
 
 		// Image Gallery
 		gallery = (Gallery) findViewById(R.id.gallery1);
@@ -126,6 +140,39 @@ public class Companion extends Activity implements OnClickListener {
 		}
 
 	}
+	SensorEventListener listener = new SensorEventListener() {
+		 
+        public void onSensorChanged(SensorEvent event) {
+            // float[] values = event.values;
+            // Log.i("sensor", "rotation" + values);
+ 
+            Sensor mySensor = event.sensor;
+ 
+            if (mySensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+               // float rX = event.values[0];
+                //float rY = event.values[1];
+                float rZ = event.values[2];
+                //tv14.setText("RV(x)= " + rX);
+                //tv15.setText("RV(y) = " + rY);
+                //tv16.setText("RV z = " + rZ + "\n");
+                // turn to the right
+ 
+                if(event.values[2] < 2 && event.values[2] > 1){
+                    Intent intent = new Intent(getApplicationContext(), ImageTargets.class);
+                    startActivity(intent);
+                }
+            }
+        }
+         
+      
+        public void onDestroy(){
+            mSm.unregisterListener(listener);
+            }
+ 
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+            // TODO Auto-generated method stub
+        }
+    };
 
 	/***************************************************************************/
 	// ///-----Gallery class
